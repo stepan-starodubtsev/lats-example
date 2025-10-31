@@ -1,11 +1,15 @@
-from src.config import _set_if_undefined  # ensure env vars present
+from dotenv import load_dotenv
+
+from src.config import set_env_if_undefined  # ensure env vars present
 from src.graph_build import build_graph
+
+load_dotenv()
 
 
 def main():
     # Ensure keys are set (prompts if missing in env)
-    _set_if_undefined("OPENAI_API_KEY")
-    _set_if_undefined("TAVILY_API_KEY")
+    set_env_if_undefined("OPENAI_API_KEY")
+    set_env_if_undefined("TAVILY_API_KEY")
 
     graph = build_graph()
 

@@ -1,13 +1,14 @@
+import os
+
 from langchain_core.output_parsers.openai_tools import JsonOutputToolsParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
+from pydantic import SecretStr
 
 from src.tools import tools
 
-
 # Base LLM
-llm = ChatOpenAI(model="gpt-4o")
-
+llm = ChatOpenAI(model="gpt-4o", api_key=SecretStr(os.getenv("OPENAI_API_KEY")))
 
 # Prompt used for both initial response and expansion
 prompt_template = ChatPromptTemplate.from_messages(
@@ -21,14 +22,10 @@ prompt_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-
 # Chain to generate the first response
 initial_answer_chain = prompt_template | llm.bind_tools(tools=tools).with_config(
     run_name="GenerateInitialCandidate"
 )
 
-
 # Parser for tool-calls from model
 parser = JsonOutputToolsParser(return_id=True)
-
-
