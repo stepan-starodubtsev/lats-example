@@ -11,7 +11,9 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "Reflect and grade the assistant response to the user question below.\n"
+            "You are a harsh critic. Reflect and grade the assistant response to the user question below.\n"
+            "Be very strict with your scoring. A score of 5-6 is for an average response. A score of 10 is reserved only for perfect, flawless, and comprehensive responses that fully satisfy all aspects of the user's request.\n"
+            "Penalize heavily for any inaccuracies, lack of detail, or failure to follow instructions.\n"
             "Consider it a valid final answer only if the last message is an assistant\n"
         ),
         ("user", "{input}"),
@@ -32,10 +34,19 @@ reflection_llm_chain = (
 
 @as_runnable
 def reflection_chain(inputs) -> Reflection:
+    MIN_SCORE_THRESHOLD = 9
+
     tool_choices = reflection_llm_chain.invoke(inputs)
     reflection = tool_choices[0]
+
     if not isinstance(inputs["candidate"][-1], AIMessage):
         reflection.found_solution = False
+
+    if reflection.score < MIN_SCORE_THRESHOLD:
+        reflection.found_solution = False
+    else:
+        reflection.found_solution = True
+
     return reflection
 
 

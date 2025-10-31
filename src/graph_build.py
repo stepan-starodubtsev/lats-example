@@ -9,6 +9,10 @@ from src.expand import expand
 
 def should_loop(state: TreeState) -> Literal["expand", "__end__"]:
     root = state["root"]
+    # Enforce a minimum of 2 steps (start + at least one expand)
+    if root.height < 1:
+        return "expand"
+    # After min steps, allow normal early stopping
     if root.is_solved:
         return END
     if root.height > 5:

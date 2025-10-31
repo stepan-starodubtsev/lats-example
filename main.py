@@ -35,10 +35,12 @@ def main():
 
     start_time = time.time()
     last_step = None
+    last_state = None
     for step in graph.stream({"input": question},
                              config={"callbacks": [langfuse_handler]}):
         last_step = step
         step_name, step_state = next(iter(step.items()))
+        last_state = step_state
         print(step_name)
         print("rolled out: ", step_state["root"].height)
         print("---")
@@ -46,7 +48,9 @@ def main():
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    solution_node = last_step["expand"]["root"].get_best_solution()
+    # Get root from the last observed state regardless of whether last step was 'start' or 'expand'
+    root = last_state["root"] if last_state is not None else next(iter(last_step.values()))["root"]
+    solution_node = root.get_best_solution()
     best_trajectory = solution_node.get_trajectory(include_reflections=False)
     print(best_trajectory[-1].content)
 

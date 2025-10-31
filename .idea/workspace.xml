@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="added langfuse tracing">
+    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="synthetic answer chain after tool response done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expand.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/expand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/llm_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graph_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph_build.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reflection_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflection_chain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/start_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/start_node.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +59,13 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "RAG__node__with__Llama-3.1-8B-instruct",
-    "last_opened_file_path": "C:/Users/dharr/PycharmProjects/LATS_Education",
+    "last_opened_file_path": "C:/Users/dharr/PycharmProjects/LATS_Education/src",
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dharr\PycharmProjects\LATS_Education\src" />
       <recent name="C:\Users\dharr\PycharmProjects\LATS_Education" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -152,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761901415804</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="synthetic answer chain after tool response done">
+      <option name="closed" value="true" />
+      <created>1761918947616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761918947616</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +189,7 @@
     <MESSAGE value="basic setup done" />
     <MESSAGE value="working basic setup done" />
     <MESSAGE value="added langfuse tracing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added langfuse tracing" />
+    <MESSAGE value="synthetic answer chain after tool response done" />
+    <option name="LAST_COMMIT_MESSAGE" value="synthetic answer chain after tool response done" />
   </component>
 </project>
