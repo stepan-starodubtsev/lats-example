@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="basic setup done">
+    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="working basic setup done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lats.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/llm_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expand.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/expand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reflection_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflection_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/start_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/start_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -128,22 +128,20 @@
       <option name="project" value="LOCAL" />
       <updated>1761895623880</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working basic setup done">
+      <option name="closed" value="true" />
+      <created>1761898652344</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761898652344</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic setup done" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic setup done" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="working basic setup done" />
+    <option name="LAST_COMMIT_MESSAGE" value="working basic setup done" />
   </component>
 </project>
