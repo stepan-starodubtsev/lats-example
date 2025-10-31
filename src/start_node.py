@@ -5,6 +5,7 @@ from src.node import Node
 from src.llm_setup import initial_answer_chain, parser
 from src.tools import tool_node
 from src.reflection_chain import reflection_chain
+from src.synthesis_chain import synthesis_chain
 
 
 def generate_initial_response(state: TreeState) -> dict:
@@ -27,6 +28,11 @@ def generate_initial_response(state: TreeState) -> dict:
         for r in parsed
     ]
     output_messages = [res] + [tr["messages"][0] for tr in tool_responses]
+    synthesized = synthesis_chain.invoke({
+        "input": state["input"],
+        "messages": output_messages,
+    })
+    output_messages = output_messages + [synthesized]
     reflection = reflection_chain.invoke(
         {"input": state["input"], "candidate": output_messages}
     )

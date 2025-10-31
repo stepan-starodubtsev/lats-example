@@ -11,7 +11,8 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "Reflect and grade the assistant response to the user question below.",
+            "Reflect and grade the assistant response to the user question below.\n"
+            "Consider it a valid final answer only if the last message is an assistant\n"
         ),
         ("user", "{input}"),
         MessagesPlaceholder(variable_name="candidate"),
@@ -20,7 +21,9 @@ prompt = ChatPromptTemplate.from_messages(
 
 reflection_llm_chain = (
     prompt
-    | llm.bind_tools(tools=[Reflection], tool_choice="Reflection").with_config(
+    | llm.bind_tools(tools=[Reflection],
+                     tool_choice="Reflection",
+                     parallel_tool_calls=False).with_config(
         run_name="Reflection"
     )
     | PydanticToolsParser(tools=[Reflection])

@@ -7,13 +7,16 @@ from langchain_core.runnables import RunnableConfig
 from src.llm_setup import llm, prompt_template, parser
 from src.tools import tools, tool_node
 from src.reflection_chain import reflection_chain
+from src.synthesis_chain import synthesis_chain
 from src.tree_state import TreeState
 from src.node import Node
 
 
 def generate_candidates(messages: ChatPromptValue, config: RunnableConfig):
-    n = config["configurable"].get("N", 5)
-    bound_kwargs = llm.bind_tools(tools=tools).kwargs
+    n = config["configurable"].get("N", 1)
+    bound_kwargs = llm.bind_tools(tools=tools,
+                                  tool_choice="required",
+                                  parallel_tool_calls=False).kwargs
     chat_result = llm.generate(
         [messages.to_messages()],
         n=n,
@@ -82,7 +85,13 @@ def expand(state: TreeState, config: RunnableConfig) -> dict:
         collected_responses[i].append(resp["messages"][0])
     output_messages = []
     for i, candidate in enumerate(new_candidates):
-        output_messages.append([candidate] + collected_responses[i])
+        msgs = [candidate] + collected_responses[i]
+        synthesized = synthesis_chain.invoke({
+            "input": state["input"],
+            "messages": msgs,
+        })
+        msgs = msgs + [synthesized]
+        output_messages.append(msgs)
 
     # Reflect on each candidate
     reflections = reflection_chain.batch(

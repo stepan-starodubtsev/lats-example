@@ -26,3 +26,5 @@ try:
 except Exception as e:
     print(f"Failed to initialize Langfuse handler or Langfuse Client: {e}")
     raise
+
+

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="working basic setup done">
+    <list default="true" id="efab6397-5781-4a6a-87a6-00181c3c025b" name="Changes" comment="added langfuse tracing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lats.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/expand.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/expand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/llm_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/llm_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reflection_chain.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflection_chain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/start_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/start_node.py" afterDir="false" />
     </list>
@@ -26,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="with_Llama-3.1-8B-instruct" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -55,8 +60,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/dharr/PycharmProjects/LATS_Education"
+    "git-widget-placeholder": "RAG__node__with__Llama-3.1-8B-instruct",
+    "last_opened_file_path": "C:/Users/dharr/PycharmProjects/LATS_Education",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -93,6 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -136,12 +144,44 @@
       <option name="project" value="LOCAL" />
       <updated>1761898652344</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added langfuse tracing">
+      <option name="closed" value="true" />
+      <created>1761901415804</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761901415804</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="RAG_node_with_Llama-3.1-8B-instruct" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic setup done" />
     <MESSAGE value="working basic setup done" />
-    <option name="LAST_COMMIT_MESSAGE" value="working basic setup done" />
+    <MESSAGE value="added langfuse tracing" />
+    <option name="LAST_COMMIT_MESSAGE" value="added langfuse tracing" />
   </component>
 </project>
